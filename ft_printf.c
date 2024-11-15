@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucaspontes <lucaspontes@student.42.fr>    +#+  +:+       +#+        */
+/*   By: lucda-si <lucda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 14:02:33 by lucda-si          #+#    #+#             */
-/*   Updated: 2024/11/14 16:15:46 by lucaspontes      ###   ########.fr       */
+/*   Updated: 2024/11/15 12:05:25 by lucda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ int	ft_printf(char const *str, ...)
 			i++;
 			while (!ft_strchr("cspdiuxX%", str[i]))/*ToDo  include my libft to be used*/
 			{
-				i++
+				i++;
 			}
-			res = res + check_format(str, i, args);/*Tofinalize function*/
+			res = res + check_format(str, i, args);/*To finalize function*/
 		}
 		else
 			res = res + ft_putchar(str[i]);/*Todo the function*/
