@@ -6,7 +6,7 @@
 #    By: lucda-si <lucda-si@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/14 13:38:51 by lucda-si          #+#    #+#              #
-#    Updated: 2024/11/15 12:05:21 by lucda-si         ###   ########.fr        #
+#    Updated: 2024/11/15 12:48:54 by lucda-si         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Werror -Wextra
 
 INCLUDES_DIR = .
 
-SRCS = ft_printf.c ft_strchr.c
+SRCS = ft_printf.c ft_strchr.c ft_putchar.c
 
 OBJS = $(SRCS:.c=.o)
 

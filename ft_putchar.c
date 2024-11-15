@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucda-si <lucda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 13:58:53 by lucda-si          #+#    #+#             */
-/*   Updated: 2024/11/15 13:11:21 by lucda-si         ###   ########.fr       */
+/*   Created: 2024/11/15 12:45:33 by lucda-si          #+#    #+#             */
+/*   Updated: 2024/11/15 12:49:01 by lucda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stddef.h>
-# include <stdarg.h>
-# include <stdlib.h>
-
-int	ft_printf(const char *str, ...);
-int	ft_putchar(int c);
-char	*ft_strchr(const char *s, int c);
-
-
-#endif
+int	ft_putchar(int c)/*find out why I should return a int stead of a char*/
+{
+	write (1, &c, 1);
+	return (1);/*why return 1*/
+}
