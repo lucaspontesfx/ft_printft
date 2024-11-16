@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lucda-si <lucda-si@student.42.fr>          +#+  +:+       +#+         #
+#    By: lucaspontes <lucaspontes@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/14 13:38:51 by lucda-si          #+#    #+#              #
-#    Updated: 2024/11/15 12:48:54 by lucda-si         ###   ########.fr        #
+#    Updated: 2024/11/15 15:44:45 by lucaspontes      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Werror -Wextra
 
 INCLUDES_DIR = .
 
-SRCS = ft_printf.c ft_strchr.c ft_putchar.c
+SRCS = ft_printf.c ft_strchr.c ft_putchar.c ft_putstr.c
 
 OBJS = $(SRCS:.c=.o)
 
