@@ -1,52 +1,55 @@
-<<<<<<< HEAD
-
-#include "ft_printf.h"
-
-int   ft_putstr(const char *str)
-{
-    int i;
-
-    if(!str)
-    {
-        return (write(1, "(null)", 6));
-    }
-    i = 0;
-    while (str[i])
-    {
-        write(1, &str[i], 1);
-        i++;
-    }
-    return (i);
-}
-=======
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_uitoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucda-si <lucda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/16 10:42:06 by lucda-si          #+#    #+#             */
-/*   Updated: 2024/11/20 11:13:41 by lucda-si         ###   ########.fr       */
+/*   Created: 2024/11/20 10:53:37 by lucda-si          #+#    #+#             */
+/*   Updated: 2024/11/20 11:44:45 by lucda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *str)
+size_t	get_size(unsigned int n)
 {
-	int	i;
+	size_t	i;
 
-	if (!str)
-	{
-		return (ft_putstr("(null)"));
-	}
 	i = 0;
-	while (str[i] != '\0')
+	if (n == 0)
 	{
-		write (1, &str[i], 1);
+		i++;
+	}
+	while (n != 0)
+	{
+		n = n / 10;
 		i++;
 	}
 	return (i);
 }
->>>>>>> 81ff29b (Almos Finished, needing some adjustments)
+
+int	ft_uitoa(unsigned int n)
+{
+	char	*str;
+	size_t	size;
+	int		res;
+
+	res = 0;
+	size = get_size(n);
+	str = (char *)malloc(sizeof(char) * (size + 1));
+	if (!str)
+		return (0);
+	str[size] = '\0';
+	if (n == 0)
+		str[0] = '0';
+	while (n != 0)
+	{
+		size--;
+		str[size] = (n % 10) + 48;
+		n = n / 10;
+	}
+	res = ft_putstr(str);
+	free (str);
+	return (res);
+}
