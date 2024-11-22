@@ -12,20 +12,17 @@
 
 #include "ft_printf.h"
 
-static int	ft_putadress_hx(unsigned long n, const char c)
+static int	ft_putadress_hx(unsigned long n)
 {
 	char	*base;
 	int		res;
 
+	base = "0123456789abcdef";
 	res = 0;
-	if (c == 'x')
-		base = "0123456789abcdef";
-	else if (c == 'X')
-		base = "0123456789ABCDEF";
 	if (n >= 16)
 	{
-		res = res + ft_putadress_hx((n / 16), c);
-		res = res + ft_putadress_hx((n % 16), c);
+		res = res + ft_putadress_hx(n / 16);
+		res = res + ft_putadress_hx(n % 16);
 	}
 	else
 	{
@@ -50,6 +47,6 @@ int	ft_putadress(void *nb)
 	if (n == 0)
 		res = res + ft_putchar(0);
 	else
-		res = res + ft_putadress_hx(n, 'x');
+		res = res + ft_putadress_hx(n);
 	return (res);
 }
